@@ -10,4 +10,4 @@ outputs:
     description: 'Mensaje enviado'
 runs:
   using: 'node12'
-  main: 'send_telegram/dist/index.js'
+  main: 'dist/index.js'
