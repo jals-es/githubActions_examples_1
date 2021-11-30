@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - uses: .github/actions/send_confirmation/
         id: hello
         with:
           who-to-greet: 'Juan Antonio'
