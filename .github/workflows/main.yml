@@ -36,6 +36,6 @@ jobs:
       - uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'highfalutin-sisters.surge.sh'
-          project: 'build/'
+          project: '.'
           login: 'juan.antonio.lis@gmail.com'
           token: 'b9124d4f0d06d49b40471491b89e9ef0' 
