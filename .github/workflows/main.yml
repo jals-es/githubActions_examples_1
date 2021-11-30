@@ -21,22 +21,20 @@ jobs:
       - name: Run build 
         run: npm run build
       - uses: actions/upload-artifact@v2
-        with: 
+        with:
           name: my-artifact
-	  path: path/to/artifact/world.txt
-	  
-   deploy:
-    
+          path: build/
+  deploy:
+     
     runs-on: ubuntu-latest
-    
+   
     steps:
       - uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
       - uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'highfalutin-sisters.surge.sh'
-          project: '.'
+          project: 'build/'
           login: 'juan.antonio.lis@gmail.com'
-          token: 'b9124d4f0d06d49b40471491b89e9ef0'
-      
-        
-        
+          token: 'b9124d4f0d06d49b40471491b89e9ef0' 
