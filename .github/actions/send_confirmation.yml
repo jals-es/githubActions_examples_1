@@ -1,0 +1,13 @@
+name: 'send_confirmation'
+description: 'Enviar confirmacion por telegram'
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'Steve'
+outputs:
+  time:
+    description: 'Mensaje enviado'
+runs:
+  using: 'node12'
+  main: 'send_telegram/dist/index.js'

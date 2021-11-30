@@ -1,0 +1,21 @@
+name: send_telegram_message
+on:
+  push:
+    branches: [ send_telegram_action ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    env: 
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      ID_CHAT: ${{ secrets.ID_CHAT }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: hello
+        with:
+          who-to-greet: 'Juan Antonio'
+      - run: echo ${{ steps.hello.outputs.time }}
