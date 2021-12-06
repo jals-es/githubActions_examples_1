@@ -1,0 +1,28 @@
+name: modificar_readme
+on:
+  push:
+    branches: [ github_action_readme ]
+
+jobs:
+
+  test-execution:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install jest
+      - run: npm test
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/modificar_readme/
+        id: hello
+        with:
+          frase_positiva: 'Los tests han funcionado y lo sabes'
+          frase_negativa: 'Los tests han fallado y lo sabes'
+          resultado_tests: 'Resultado de los tests'
+      - run: echo ${{ steps.hello.outputs.texto }}

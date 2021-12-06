@@ -1,0 +1,21 @@
+name: 'modificar_readme'
+description: 'Modificar readme'
+inputs:
+  frase_positiva:
+    description: 'Frase positiva'
+    required: true
+    default: 'Frase positiva'
+  frase_negativa:
+    description: 'Frase negativa'
+    required: true
+    default: 'Frase negativa'
+  resultado_tests:
+    description: 'Tests'
+    required: true
+    default: 'Tests'
+outputs:
+  texto:
+    description: 'Meme añadido al readme'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
